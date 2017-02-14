@@ -38,17 +38,17 @@
       <div class="row">
         <div class="col-md-12 action-area">
 					<a id="form"></a>
-					<form>
+					<form id="inputForm">
 						<div id="step1" class="step">
 							<h2>Please answer the following</h2>
 							<label for="shareUrl">Url for user to share</label>
-							<input type="text" name="shareUrl" id="shareUrl" class="form-control"/>
+							<input type="url" name="shareUrl" id="shareUrl" class="form-control" required/>
 							<label for="resourceUrl">Resource to redirect</label>
-							<input type="text" name="resourceUrl" id="resourceUrl" class="form-control"/>
+							<input type="url" name="resourceUrl" id="resourceUrl" class="form-control" required/>
 							<label for="linkText">Link text</label>
-							<input type="text" name="linkText" id="linkText" class="form-control"/>
+							<input type="text" name="linkText" id="linkText" class="form-control" required/>
 							<label for="yourEmail">Your email</label>
-							<input type="text" name="yourEmail" id="yourEmail" class="form-control"/>
+							<input type="email" name="yourEmail" id="yourEmail" class="form-control" required/>
         			<button class="btn btn-primary btn-lg getCode">Get code</button>
 						</div>
 						<div id="step2" class="step">
@@ -73,8 +73,10 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
     <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/jquery.validate.min.js"></script>
+    <script src="js/vendor/jquery-validate.bootstrap-tooltip.min.js"></script>
+
     <script src="js/main.js"></script>
 
     <script>

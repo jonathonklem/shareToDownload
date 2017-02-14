@@ -20,24 +20,38 @@ $(function() {
 
 	// handle the generation of the javascript the user will need
 	$('.getCode').click(function(e) {
-		e.preventDefault();
-
 		// validate all of the fields
-		
-		// add thinking indicator
+		$("#inputForm").validate({
+		  rules: {
+		    shareUrl: {required: true, url: true},
+				resourceUrl: {required: true, url: true},
+				linkText: {required: true},
+				email: {required: true, email: true}
+		  },
+		  messages: {
+		    shareUrl: "Please enter a valid URL",
+				resourceUrl: "Please enter a valid URL",
+				linkText: "Please enter link text",
+				yourEmail: "Please enter a valid email",
+		  },
+			submitHandler: function(form) {
+				// add thinking indicator
 
-		// post email to mailchimp
+				// post email to mailchimp
 
-		// generate their share code
-			// facebook = http://facebook.com/sharer.php?u={{url}}
-			// twitter = http://twitter.com/intent/tweet?url={{url}}
-			// TODO: how do we handle facebook/twitter?
-		output = "<script>function handleClick() { var wndw=window.open('" + $('#shareUrl').val() + "');var timer = setInterval(function(){if(wndw.closed){ clearInterval(timer);document.location='" + $('#resourceUrl').val() + "'; }}, 200); }</script>";
-		output += "<a href='#' onclick='handleClick()'>" + $('#linkText').val() + "</a>";
+				// generate their share code
+					// facebook = http://facebook.com/sharer.php?u={{url}}
+					// twitter = http://twitter.com/intent/tweet?url={{url}}
+					// TODO: how do we handle facebook/twitter?
+				output = "<script>function handleClick() { var wndw=window.open('" + $('#shareUrl').val() + "');var timer = setInterval(function(){if(wndw.closed){ clearInterval(timer);document.location='" + $('#resourceUrl').val() + "'; }}, 200); }</script>";
+				output += "<a href='#' onclick='handleClick()'>" + $('#linkText').val() + "</a>";
 
-		// display share code	
-		$('#copyMe').val(output);
-		$('.step').hide();
-		$('#step2').slideDown();
+				// display share code	
+				$('#copyMe').val(output);
+				$('.step').hide();
+				$('#step2').slideDown();
+			}
+		});
 	});
+
 });
