@@ -1,12 +1,89 @@
-<html>
-  <head>
-    <title>Share To Download</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous" />
-  </head>
-  <body>
-  </body>
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Share to Downloaderizer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Share to Downloaderizer</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Get shares for your content!</h1>
+        <p>Now you can easily request users share your links on Twitter and Facebook before they can download your content.</p>
+				<p>This method does not request permissions from the user, so it is less obtrusive than other methods.  However, this method is also less "secure" than other methods in that it is possible for a crafty user to get your download link without sharing.</p>
+				<p>It's my belief that this is a less adversarial way to do things, and users happy to share you content will be more likely to do so because you're not requesting permission to do anything on their behalf.  This is a classic "risk reversal" which will likely lead to more shares and more downloads in total.</p>
+        <p><a class="btn btn-primary btn-lg" href="#form" role="button">Get started &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-12 action-area">
+					<a id="form"></a>
+					<form>
+						<div id="step1" class="step">
+							<h2>Please answer the following</h2>
+							<label for="shareUrl">Url for user to share</label>
+							<input type="text" name="shareUrl" id="shareUrl" class="form-control"/>
+							<label for="resourceUrl">Resource to redirect</label>
+							<input type="text" name="resourceUrl" id="resourceUrl" class="form-control"/>
+							<label for="linkText">Link text</label>
+							<input type="text" name="linkText" id="linkText" class="form-control"/>
+							<label for="yourEmail">Your email</label>
+							<input type="text" name="yourEmail" id="yourEmail" class="form-control"/>
+        			<button class="btn btn-primary btn-lg getCode">Get code</button>
+						</div>
+						<div id="step2" class="step">
+							<h2>Paste this code where you want the link</h2>
+							<textarea class="form-control" id="copyMe"></textarea>
+						</div>
+					</form>
+        </div>  <!-- /col-md-12-->
+      </div> <!-- /row -->
+			<p class="share">
+				Share This Page!<br/>
+				<a href="#" class="twitterFooterShare"><img src="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-social-twitter.svg" /></a>
+				<a href="#" class="facebookFooterShare"><img src="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-social-facebook.svg" /></a>
+			</p>
+
+      <hr>
+
+      <footer>
+        <p>&copy; <a href="http://dayat.net">Dayat Technologies</a> 2017</p>
+      </footer>
+    </div> <!-- /container -->
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='http://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-85786812-1','auto');ga('send','pageview');
+    </script>
+    </body>
 </html>

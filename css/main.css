@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.action-area label {
+		font-size: 30px;
+    text-transform: capitalize;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.action-area input, .action-area button {
+    width: 80%;
+    margin: auto;
+    display: block;
+    height: 42px;
+    border-radius: 4px;
+    margin-bottom: 44px;
+    font-size: 24px;
+}
+.action-area button {
+		height: 56px;
+    text-transform: capitalize;
+}
+p.share {
+    text-align: center;
+    font-size: 31px;
+    margin: 35px 0px;
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 36px;
+}
+
+textarea#copyMe {
+    display: block;
+    margin: auto !important;
+    width: 80% !important;
+    font-size: 27px;
+    height: 220px;
+}
