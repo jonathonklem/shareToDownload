@@ -11,7 +11,7 @@ $(function() {
         $('html, body').animate({
           scrollTop: target.offset().top-70
         }, 1000);
-				$('#step1').slideDown();
+				goToStep(1);
         return false;
       }
     }
@@ -36,22 +36,41 @@ $(function() {
 		  },
 			submitHandler: function(form) {
 				// add thinking indicator
-
-				// post email to mailchimp
+				goToStep(2);
 
 				// generate their share code
 					// facebook = http://facebook.com/sharer.php?u={{url}}
+				if ($('#socialMedia').val() == "Facebook") {
+					var socialMediaUrl = "http://facebook.com/sharer.php?u=" + $('#shareUrl').val();
+				} else {
 					// twitter = http://twitter.com/intent/tweet?url={{url}}
+					var socialMediaUrl = "http://twitter.com/intent/tweet?url=" + $('#shareUrl').val();
+				}
 					// TODO: how do we handle facebook/twitter?
-				output = "<script>function handleClick() { var wndw=window.open('" + $('#shareUrl').val() + "');var timer = setInterval(function(){if(wndw.closed){ clearInterval(timer);document.location='" + $('#resourceUrl').val() + "'; }}, 200); }</script>";
+				output = "<script>function handleClick() { var wndw=window.open('" + socialMediaUrl+ "');var timer = setInterval(function(){if(wndw.closed){ clearInterval(timer);document.location='" + $('#resourceUrl').val() + "'; }}, 200); }</script>";
 				output += "<a href='#' onclick='handleClick()'>" + $('#linkText').val() + "</a>";
 
-				// display share code	
-				$('#copyMe').val(output);
-				$('.step').hide();
-				$('#step2').slideDown();
+				setTimeout(function() {
+					// display share code	
+					$('#copyMe').val(output);
+					goToStep(3);
+				}, 2000);
 			}
 		});
 	});
 
+	$('.startOver').click(function(e) {
+		e.preventDefault();
+		
+		// clear out previous entries
+		$('#inputForm')[0].reset();
+
+		// show the form again
+		goToStep(1);
+	});
 });
+
+function goToStep(number) {
+	$('.step').hide();
+	$('#step' + number).slideDown();
+}

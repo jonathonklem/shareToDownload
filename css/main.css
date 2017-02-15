@@ -13,7 +13,7 @@ body {
     margin: auto;
     text-align: center;
 }
-.action-area input, .action-area button {
+.action-area input, .action-area button, .action-area select {
     width: 80%;
     margin: auto;
     display: block;
@@ -46,3 +46,9 @@ textarea#copyMe {
     font-size: 27px;
     height: 220px;
 }
+
+img.thinking {
+    display: block;
+    margin: auto;
+}
+.startOver { margin-top: 25px !important; }
