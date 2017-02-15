@@ -46,9 +46,10 @@ $(function() {
 					// twitter = http://twitter.com/intent/tweet?url={{url}}
 					var socialMediaUrl = "http://twitter.com/intent/tweet?url=" + $('#shareUrl').val();
 				}
-					// TODO: how do we handle facebook/twitter?
-				output = "<script>function handleClick() { var wndw=window.open('" + socialMediaUrl+ "');var timer = setInterval(function(){if(wndw.closed){ clearInterval(timer);document.location='" + $('#resourceUrl').val() + "'; }}, 200); }</script>";
-				output += "<a href='#' onclick='handleClick()'>" + $('#linkText').val() + "</a>";
+				
+				// TODO: how do we handle facebook/twitter?
+				output = "<script>function handleClick" + $('#socialMedia').val() + "() { var wndw=window.open('" + socialMediaUrl+ "');var timer = setInterval(function(){if(wndw.closed){ clearInterval(timer);document.location='" + $('#resourceUrl').val() + "'; }}, 200); }</script>";
+				output += "<a href='#' onclick='handleClick" + $('#socialMedia').val() + "()'>" + $('#linkText').val() + "</a>";
 
 				setTimeout(function() {
 					// display share code	
